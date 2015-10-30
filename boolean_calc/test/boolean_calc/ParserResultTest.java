@@ -18,4 +18,10 @@ public class ParserResultTest {
 		assertNotEquals(null, result.getErrors());
 	}
 	
+	@Test
+	public void add_token_test() {
+		ParserResult result = new ParserResult();
+		result.addToken(new Token("1"));
+	}
+	
 }

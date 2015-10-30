@@ -5,21 +5,25 @@ import java.util.List;
 
 public class ParserResult {
 
-	List<String> tokens;
+	List<Token> tokens;
 	
 	List<String> errors;
 	
 	public ParserResult() {
-		tokens = new ArrayList<String>();
+		tokens = new ArrayList<Token>();
 		errors = new ArrayList<String>();
 	}
 
-	public List<String> getTokens() {
+	public List<Token> getTokens() {
 		return tokens;
 	}
 
 	public List<String> getErrors() {
 		return errors;
+	}
+
+	public void addToken(Token token) {
+		tokens.add(token);
 	}
 	
 }

@@ -2,9 +2,9 @@ package boolean_calc;
 
 public class Token {
 	
-	String token;
+	Object token;
 	
-	public Token(String token) {
+	public Token(Object token) {
 		this.token = token;
 	}
 

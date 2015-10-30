@@ -21,7 +21,7 @@ public class ParserTest {
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);
 		
-		Token[] expecteds = {new BooleanToken("1")};
+		Token[] expecteds = {new BooleanToken(true)};
 		assertArrayEquals(expecteds, actuals);
 	}
 	
@@ -33,7 +33,7 @@ public class ParserTest {
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);
 		
-		Token[] expecteds = {new BooleanToken("0")};
+		Token[] expecteds = {new BooleanToken(false)};
 		assertArrayEquals(expecteds, actuals);
 	}
 	

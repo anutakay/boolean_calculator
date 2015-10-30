@@ -2,8 +2,12 @@ package boolean_calc;
 
 public class BooleanToken extends Token {
 
-	public BooleanToken(String token) {
+	private BooleanToken(Object token) {
 		super(token);
+	}
+
+	public BooleanToken(boolean b) {
+		this(new Boolean(b));
 	}
 
 }

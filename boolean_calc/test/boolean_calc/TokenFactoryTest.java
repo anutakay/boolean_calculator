@@ -22,7 +22,7 @@ public class TokenFactoryTest {
 	public void zero_token_test() throws Exception {
 		TokenFactory factory = new TokenFactory();
 		Token token = factory.createToken("0");
-		Token zeroToken = new BooleanToken("0");
+		Token zeroToken = new BooleanToken(false);
 		assertEquals(zeroToken, token);
 	}
 	
@@ -30,7 +30,7 @@ public class TokenFactoryTest {
 	public void one_token_test() throws Exception {
 		TokenFactory factory = new TokenFactory();
 		Token token = factory.createToken("1");
-		Token oneToken = new BooleanToken("1");
+		Token oneToken = new BooleanToken(true);
 		assertEquals(oneToken, token);
 	}
 	

@@ -25,4 +25,16 @@ public class ParserTest {
 		assertArrayEquals(expecteds, actuals);
 	}
 	
+	@Test
+	public void zero_test() {
+		Parser parser = new Parser();
+		ParserResult result = parser.parse("0");
+		
+		Token[] actuals = new Token[result.tokens.size()];
+		actuals = result.tokens.toArray(actuals);
+		
+		Token[] expecteds = {new Token("0")};
+		assertArrayEquals(expecteds, actuals);
+	}
+	
 }

@@ -6,8 +6,13 @@ public class Parser {
 	
 	public ParserResult parse(String sourse) {
 		ParserResult result = new ParserResult();
-		
-		result.addToken(new BooleanToken(sourse));
+		TokenFactory factory = new TokenFactory();
+		Token token = null; 
+		try {
+			token = factory.createToken(sourse);
+			result.addToken(token);
+		} catch (Exception e) {
+		}	
 		return result;
 	}
 }

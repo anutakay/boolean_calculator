@@ -37,4 +37,16 @@ public class ParserTest {
 		assertArrayEquals(expecteds, actuals);
 	}
 	
+	@Test
+	public void two_test() {
+		Parser parser = new Parser();
+		ParserResult result = parser.parse("2");
+		
+		Token[] actuals = new Token[result.tokens.size()];
+		actuals = result.tokens.toArray(actuals);
+		
+		Token[] expecteds = {};
+		assertArrayEquals(expecteds, actuals);
+	}
+	
 }

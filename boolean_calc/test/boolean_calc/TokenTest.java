@@ -1,7 +1,5 @@
 package boolean_calc;
 
-import static org.junit.Assert.assertNotEquals;
-
 import org.junit.Test;
 
 public class TokenTest {

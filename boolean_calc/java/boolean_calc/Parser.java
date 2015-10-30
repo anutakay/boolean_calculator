@@ -6,7 +6,8 @@ public class Parser {
 	
 	public ParserResult parse(String sourse) {
 		ParserResult result = new ParserResult();
-		result.addToken(new Token(sourse));
+		
+		result.addToken(new BooleanToken(sourse));
 		return result;
 	}
 }

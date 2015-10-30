@@ -30,8 +30,48 @@ public class TokenFactoryTest {
 	public void one_token_test() throws Exception {
 		TokenFactory factory = new TokenFactory();
 		Token token = factory.createToken("1");
-		Token zeroToken = new BooleanToken("1");
-		assertEquals(zeroToken, token);
+		Token oneToken = new BooleanToken("1");
+		assertEquals(oneToken, token);
+	}
+	
+	@Test
+	public void no_token_test() throws Exception {
+		TokenFactory factory = new TokenFactory();
+		Token token = factory.createToken("not");
+		Token noToken = new OperatorToken("not");
+		assertEquals(noToken, token);
+	}
+	
+	@Test
+	public void and_token_test() throws Exception {
+		TokenFactory factory = new TokenFactory();
+		Token token = factory.createToken("and");
+		Token noToken = new OperatorToken("and");
+		assertEquals(noToken, token);
+	}
+	
+	@Test
+	public void or_token_test() throws Exception {
+		TokenFactory factory = new TokenFactory();
+		Token token = factory.createToken("or");
+		Token noToken = new OperatorToken("or");
+		assertEquals(noToken, token);
+	}
+	
+	@Test
+	public void open_bracket_token_test() throws Exception {
+		TokenFactory factory = new TokenFactory();
+		Token token = factory.createToken("(");
+		Token noToken = new BracketToken("(");
+		assertEquals(noToken, token);
+	}
+	
+	@Test
+	public void close_bracket_token_test() throws Exception {
+		TokenFactory factory = new TokenFactory();
+		Token token = factory.createToken(")");
+		Token noToken = new BracketToken(")");
+		assertEquals(noToken, token);
 	}
 
 }

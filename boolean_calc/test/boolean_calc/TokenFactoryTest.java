@@ -38,7 +38,7 @@ public class TokenFactoryTest {
 	public void no_token_test() throws Exception {
 		TokenFactory factory = new TokenFactory();
 		Token token = factory.createToken("not");
-		Token noToken = new OperatorToken("not");
+		Token noToken = new OperatorToken(OperatorToken.Operator.NOT);
 		assertEquals(noToken, token);
 	}
 	
@@ -46,7 +46,7 @@ public class TokenFactoryTest {
 	public void and_token_test() throws Exception {
 		TokenFactory factory = new TokenFactory();
 		Token token = factory.createToken("and");
-		Token noToken = new OperatorToken("and");
+		Token noToken = new OperatorToken(OperatorToken.Operator.AND);
 		assertEquals(noToken, token);
 	}
 	
@@ -54,7 +54,7 @@ public class TokenFactoryTest {
 	public void or_token_test() throws Exception {
 		TokenFactory factory = new TokenFactory();
 		Token token = factory.createToken("or");
-		Token noToken = new OperatorToken("or");
+		Token noToken = new OperatorToken(OperatorToken.Operator.OR);
 		assertEquals(noToken, token);
 	}
 	
@@ -62,7 +62,7 @@ public class TokenFactoryTest {
 	public void open_bracket_token_test() throws Exception {
 		TokenFactory factory = new TokenFactory();
 		Token token = factory.createToken("(");
-		Token noToken = new BracketToken("(");
+		Token noToken = new BracketToken(BracketToken.Bracket.LEFT);
 		assertEquals(noToken, token);
 	}
 	
@@ -70,7 +70,7 @@ public class TokenFactoryTest {
 	public void close_bracket_token_test() throws Exception {
 		TokenFactory factory = new TokenFactory();
 		Token token = factory.createToken(")");
-		Token noToken = new BracketToken(")");
+		Token noToken = new BracketToken(BracketToken.Bracket.RIGHT);
 		assertEquals(noToken, token);
 	}
 

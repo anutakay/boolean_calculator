@@ -10,19 +10,19 @@ public class TokenFactory {
 			return new BooleanToken(true);
 		} 
 		else if(token.equals("not")) {
-			return new OperatorToken("not");
+			return new OperatorToken(OperatorToken.Operator.NOT);
 		}
 		else if(token.equals("and")) {
-			return new OperatorToken("and");
+			return new OperatorToken(OperatorToken.Operator.AND);
 		}
 		else if(token.equals("or")) {
-			return new OperatorToken("or");
+			return new OperatorToken(OperatorToken.Operator.OR);
 		}
 		else if(token.equals("(")) {
-			return new BracketToken("(");
+			return new BracketToken(BracketToken.Bracket.LEFT);
 		}
 		else if(token.equals(")")) {
-			return new BracketToken(")");
+			return new BracketToken(BracketToken.Bracket.RIGHT);
 		}
 		else throw new Exception();
 	}

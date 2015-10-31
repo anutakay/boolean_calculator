@@ -2,8 +2,10 @@ package boolean_calc;
 
 public class BracketToken extends Token {
 
-	public BracketToken(String token) {
-		super(token);
+	enum Bracket { LEFT, RIGHT };
+
+	public BracketToken(Bracket bracket) {
+		super(bracket);
 	}
 
 }

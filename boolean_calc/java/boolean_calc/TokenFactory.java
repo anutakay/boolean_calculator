@@ -24,7 +24,10 @@ public class TokenFactory {
 		else if(token.equals(")")) {
 			return new BracketToken(BracketToken.Bracket.RIGHT);
 		}
-		else throw new Exception();
+		else {
+			VariableMachine machine = new VariableMachine();
+			return machine.getToken(token);
+		}
 	}
 
 }

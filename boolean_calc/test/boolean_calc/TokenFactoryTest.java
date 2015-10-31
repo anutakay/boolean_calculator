@@ -73,5 +73,13 @@ public class TokenFactoryTest {
 		Token noToken = new BracketToken(BracketToken.Bracket.RIGHT);
 		assertEquals(noToken, token);
 	}
+	
+	@Test
+	public void variable_token_test() throws Exception {
+		TokenFactory factory = new TokenFactory();
+		Token token = factory.createToken("x");
+		Token varToken = new VariableToken("x");
+		assertEquals(varToken, token);
+	}
 
 }

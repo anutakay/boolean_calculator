@@ -90,4 +90,21 @@ public class ParserTest {
 		assertArrayEquals(expecteds, actuals);
 	}
 	
+	@Test
+	public void brackets_expression_test() {
+		Parser parser = new Parser();
+		ParserResult result = parser.parse("(x)");
+		
+		Token[] actuals = new Token[result.tokens.size()];
+		actuals = result.tokens.toArray(actuals);
+		
+		Token[] expecteds = 
+			{ 	
+				new BracketToken(BracketToken.Bracket.LEFT), 
+				new VariableToken("x"),
+				new BracketToken(BracketToken.Bracket.RIGHT)
+			};
+		assertArrayEquals(expecteds, actuals);
+	}
+	
 }

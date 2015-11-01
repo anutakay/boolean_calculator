@@ -38,9 +38,33 @@ public class ParserTest {
 	}
 	
 	@Test
+	public void var_test() {
+		Parser parser = new Parser();
+		ParserResult result = parser.parse("x");
+		
+		Token[] actuals = new Token[result.tokens.size()];
+		actuals = result.tokens.toArray(actuals);
+		
+		Token[] expecteds = {new VariableToken("x")};
+		assertArrayEquals(expecteds, actuals);
+	}
+	
+	@Test
 	public void two_test() {
 		Parser parser = new Parser();
 		ParserResult result = parser.parse("2");
+		
+		Token[] actuals = new Token[result.tokens.size()];
+		actuals = result.tokens.toArray(actuals);
+		
+		Token[] expecteds = {};
+		assertArrayEquals(expecteds, actuals);
+	}
+	
+	@Test
+	public void symbol_test() {
+		Parser parser = new Parser();
+		ParserResult result = parser.parse("x!");
 		
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);

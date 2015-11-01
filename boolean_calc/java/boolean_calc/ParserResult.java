@@ -25,5 +25,9 @@ public class ParserResult {
 	public void addToken(Token token) {
 		tokens.add(token);
 	}
+
+	public void addError(String error) {
+		errors.add(error);
+	}
 	
 }

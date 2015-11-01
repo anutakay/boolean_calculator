@@ -107,4 +107,30 @@ public class ParserTest {
 		assertArrayEquals(expecteds, actuals);
 	}
 	
+	@Test
+	public void source_test() {
+		String[] array = {"1 and 0", "x or x", "(not fun)"};
+		Source source = new ArraySource(array);
+		
+		Parser parser = new Parser();
+		ParserResult result = parser.parse(source);
+		
+		Token[] actuals = new Token[result.tokens.size()];
+		actuals = result.tokens.toArray(actuals);
+		Token[] expecteds = 
+			{ 	
+				new BooleanToken(true),
+				new OperatorToken(OperatorToken.Operator.AND),
+				new BooleanToken(false),
+				new VariableToken("x"),
+				new OperatorToken(OperatorToken.Operator.OR),
+				new VariableToken("x"),
+				new BracketToken(BracketToken.Bracket.LEFT), 
+				new OperatorToken(OperatorToken.Operator.NOT),
+				new VariableToken("fun"),
+				new BracketToken(BracketToken.Bracket.RIGHT)
+			};
+		assertArrayEquals(expecteds, actuals);
+	}
+	
 }

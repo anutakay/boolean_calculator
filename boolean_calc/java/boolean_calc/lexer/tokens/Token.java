@@ -1,4 +1,4 @@
-package boolean_calc;
+package boolean_calc.lexer.tokens;
 
 public class Token {
 	

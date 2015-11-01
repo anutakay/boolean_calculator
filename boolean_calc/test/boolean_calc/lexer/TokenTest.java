@@ -1,6 +1,8 @@
-package boolean_calc;
+package boolean_calc.lexer;
 
 import org.junit.Test;
+
+import boolean_calc.lexer.tokens.Token;
 
 public class TokenTest {
 	

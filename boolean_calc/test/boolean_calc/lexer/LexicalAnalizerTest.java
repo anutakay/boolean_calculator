@@ -1,22 +1,27 @@
-package boolean_calc;
+package boolean_calc.lexer;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class ParserTest {
+import boolean_calc.lexer.tokens.BooleanToken;
+import boolean_calc.lexer.tokens.BracketToken;
+import boolean_calc.lexer.tokens.Token;
+import boolean_calc.lexer.tokens.VariableToken;
+
+public class LexicalAnalizerTest {
 	
 	@Test
 	public void result_not_null_test() {
-		Parser parser = new Parser();
-		ParserResult result = parser.parse("");
+		LexicalAnalyzer parser = new LexicalAnalyzer();
+		LexicalResult result = parser.parse("");
 		assertNotEquals(null, result);
 	}
 	
 	@Test
 	public void one_test() {
-		Parser parser = new Parser();
-		ParserResult result = parser.parse("1");
+		LexicalAnalyzer parser = new LexicalAnalyzer();
+		LexicalResult result = parser.parse("1");
 		
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);
@@ -27,8 +32,8 @@ public class ParserTest {
 	
 	@Test
 	public void zero_test() {
-		Parser parser = new Parser();
-		ParserResult result = parser.parse("0");
+		LexicalAnalyzer parser = new LexicalAnalyzer();
+		LexicalResult result = parser.parse("0");
 		
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);
@@ -39,8 +44,8 @@ public class ParserTest {
 	
 	@Test
 	public void var_test() {
-		Parser parser = new Parser();
-		ParserResult result = parser.parse("x");
+		LexicalAnalyzer parser = new LexicalAnalyzer();
+		LexicalResult result = parser.parse("x");
 		
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);
@@ -51,8 +56,8 @@ public class ParserTest {
 	
 	@Test
 	public void two_test() {
-		Parser parser = new Parser();
-		ParserResult result = parser.parse("2");
+		LexicalAnalyzer parser = new LexicalAnalyzer();
+		LexicalResult result = parser.parse("2");
 		
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);
@@ -63,8 +68,8 @@ public class ParserTest {
 	
 	@Test
 	public void symbol_test() {
-		Parser parser = new Parser();
-		ParserResult result = parser.parse("x!");
+		LexicalAnalyzer parser = new LexicalAnalyzer();
+		LexicalResult result = parser.parse("x!");
 		
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);
@@ -75,8 +80,8 @@ public class ParserTest {
 	
 	@Test
 	public void and_expression_test() {
-		Parser parser = new Parser();
-		ParserResult result = parser.parse("x and y");
+		LexicalAnalyzer parser = new LexicalAnalyzer();
+		LexicalResult result = parser.parse("x and y");
 		
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);
@@ -92,8 +97,8 @@ public class ParserTest {
 	
 	@Test
 	public void brackets_expression_test() {
-		Parser parser = new Parser();
-		ParserResult result = parser.parse("(x)");
+		LexicalAnalyzer parser = new LexicalAnalyzer();
+		LexicalResult result = parser.parse("(x)");
 		
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);
@@ -112,8 +117,8 @@ public class ParserTest {
 		String[] array = {"1 and 0", "x or x", "(not fun)"};
 		Source source = new ArraySource(array);
 		
-		Parser parser = new Parser();
-		ParserResult result = parser.parse(source);
+		LexicalAnalyzer parser = new LexicalAnalyzer();
+		LexicalResult result = parser.parse(source);
 		
 		Token[] actuals = new Token[result.tokens.size()];
 		actuals = result.tokens.toArray(actuals);

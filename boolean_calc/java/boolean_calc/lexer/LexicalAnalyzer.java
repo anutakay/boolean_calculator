@@ -1,14 +1,17 @@
-package boolean_calc;
+package boolean_calc.lexer;
 
-public class Parser {
+import boolean_calc.lexer.tokens.Token;
+
+
+public class LexicalAnalyzer {
 	
-	private ParserResult result;
+	private LexicalResult result;
 	
 	private Preparator preparator = new Preparator();
 	
-	public Parser() {}
+	public LexicalAnalyzer() {}
 	
-	public ParserResult parse(Source source) {
+	public LexicalResult parse(Source source) {
 		clearResult();
 		String str = source.next();
 		while(str != null) {
@@ -18,14 +21,14 @@ public class Parser {
 		return result;
 	}
 	
-	public ParserResult parse(String source) {
+	public LexicalResult parse(String source) {
 		clearResult();
 		parseString(source);
 		return result;
 	}
 	
 	private void clearResult() {
-		result = new ParserResult();
+		result = new LexicalResult();
 	}
 	
 	private void parseString(String source) {

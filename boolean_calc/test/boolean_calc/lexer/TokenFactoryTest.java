@@ -1,8 +1,13 @@
-package boolean_calc;
+package boolean_calc.lexer;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import boolean_calc.lexer.tokens.BooleanToken;
+import boolean_calc.lexer.tokens.BracketToken;
+import boolean_calc.lexer.tokens.Token;
+import boolean_calc.lexer.tokens.VariableToken;
 
 public class TokenFactoryTest {
 	

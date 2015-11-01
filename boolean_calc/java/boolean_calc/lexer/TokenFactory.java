@@ -1,4 +1,8 @@
-package boolean_calc;
+package boolean_calc.lexer;
+
+import boolean_calc.lexer.tokens.BooleanToken;
+import boolean_calc.lexer.tokens.BracketToken;
+import boolean_calc.lexer.tokens.Token;
 
 public class TokenFactory {
 

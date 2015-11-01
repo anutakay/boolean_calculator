@@ -1,15 +1,17 @@
-package boolean_calc;
+package boolean_calc.lexer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParserResult {
+import boolean_calc.lexer.tokens.Token;
+
+public class LexicalResult {
 
 	List<Token> tokens;
 	
 	List<String> errors;
 	
-	public ParserResult() {
+	public LexicalResult() {
 		tokens = new ArrayList<Token>();
 		errors = new ArrayList<String>();
 	}

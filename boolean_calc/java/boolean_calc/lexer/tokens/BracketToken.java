@@ -1,8 +1,10 @@
-package boolean_calc;
+package boolean_calc.lexer.tokens;
+
+
 
 public class BracketToken extends Token {
 
-	enum Bracket { LEFT, RIGHT };
+	public enum Bracket { LEFT, RIGHT };
 
 	public BracketToken(Bracket bracket) {
 		super(bracket);

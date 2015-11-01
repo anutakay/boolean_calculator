@@ -1,4 +1,5 @@
-package boolean_calc;
+package boolean_calc.lexer;
+
 
 public class ArraySource implements Source {
 	

@@ -4,6 +4,8 @@ public class Parser {
 	
 	private ParserResult result;
 	
+	private Preparator preparator = new Preparator();
+	
 	public Parser() {}
 	
 	public ParserResult parse(Source source) {
@@ -27,20 +29,8 @@ public class Parser {
 	}
 	
 	private void parseString(String source) {
-		String[] strings = prepareStrings(source);
+		String[] strings = preparator.prepare(source);
 		makeTokens(strings);
-	}
-		
-	private String[] prepareStrings(String source) {
-		String withSpaces = addSpaces(source);
-		String[] res = withSpaces.split(" ");
-		return res;
-	} 
-	
-	private String addSpaces(String source) {
-		String res = source.replace("(", " ( ");
-		res = res.replace(")", " ) ");
-		return res;
 	}
 	
 	private void makeTokens(String[] strings) {

@@ -73,4 +73,21 @@ public class ParserTest {
 		assertArrayEquals(expecteds, actuals);
 	}
 	
+	@Test
+	public void and_expression_test() {
+		Parser parser = new Parser();
+		ParserResult result = parser.parse("x and y");
+		
+		Token[] actuals = new Token[result.tokens.size()];
+		actuals = result.tokens.toArray(actuals);
+		
+		Token[] expecteds = 
+			{ 	
+				new VariableToken("x"), 
+				new OperatorToken(OperatorToken.Operator.AND),
+				new VariableToken("y")
+			};
+		assertArrayEquals(expecteds, actuals);
+	}
+	
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ParserResult {
 	
-	Expression expression;
+	AndExpression expression;
 	
 	List<String> errors;
 	

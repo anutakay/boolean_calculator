@@ -11,7 +11,7 @@ public class LexicalAnalyzer {
 	
 	public LexicalAnalyzer() {}
 	
-	public LexicalResult parse(Source source) {
+	public LexicalResult analize(Source source) {
 		clearResult();
 		String str = source.next();
 		while(str != null) {
@@ -21,7 +21,7 @@ public class LexicalAnalyzer {
 		return result;
 	}
 	
-	public LexicalResult parse(String source) {
+	public LexicalResult analize(String source) {
 		clearResult();
 		parseString(source);
 		return result;
